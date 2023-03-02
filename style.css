@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: dimgray;
+    color: aliceblue;
+    border: 3px solid black;
+    border-radius: 1000px;
+}
+cim{
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: brown;
+}
+szov{
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: red;
+}
