@@ -5,17 +5,46 @@ body{
     align-items: center;
     justify-content: space-between;
     background-color: dimgray;
-    color: aliceblue;
-    border: 3px solid black;
-    border-radius: 1000px;
+    color: #f0f8ff;
+    border: 20px solid black;
+    border-radius: 80px;
+    font-size: 15px;
 }
+*{
+    color: #f0f8ff;
+}
+
 cim{
     border: 3px solid black;
     border-radius: 10px;
     background-color: brown;
 }
+
 szov{
     border: 3px solid black;
     border-radius: 10px;
     background-color: red;
+}
+
+table{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    padding: 20px;
+}
+
+tr{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 100px;
+}
+
+tr:hover{
+    transition: 1s;
+    font-size: 20px;
+
 }

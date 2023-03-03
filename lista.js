@@ -1,30 +1,63 @@
-window.addEventListener('load', init)
-function init(){
+window.addEventListener("load", init);
+function init() {
     const list = [
-      { nev: "Peti", mondat: "A kedd!" },
-      { nev: "Gergo", mondat: "A kedd masodszor!", szemszin: "Kek/Zold", kor: 23 },
-      { nev: "Niki", mondat: "Délelőtt kint játszottam a kutyussal" },
-      { nev: "Asztrik", mondat: "Kedden, mert ott nem történt semmi." },
-      { nev: "GergőT", mondat: "Kedd a legjóbb nap." },
-      { név: "Sanyi", mondat: "Tegnap sikerült időben megoldani a java feladatot.",},
-      { nev: "Márton", mondat: "Nem volt angol hétfőn" },
-      { nev: "Dominik", mondat: "Kedd, mert a szölőben a kistraktorral tevékenykedtem.",},
-      { nev: "Marci", mondat: "Ha gyenge vagy akkor legalább ne sírj" },
-      { nev: "Bence", mondat: "Pillanat türelmet kérek javítom a mikrofont." },
-    ];
-    megjelenit(list)
+        { szemszin: "barna", kor: 20, tesok: 2, nev: "Peti", mondat: "A kedd!" },
+        { szemszin: "barna", kor: 23, tesok: 2, nev: "Gergo", mondat: "A kedd masodszor!"},
+        { szemszin: "barna", kor: 20, tesok: 2, nev: "Niki", mondat: "Délelőtt kint játszottam a kutyussal" },
+        { szemszin: "kék", kor: 20, tesok: 2, nev: "Asztrik", mondat: "Kedden, mert ott nem történt semmi." },
+        { szemszin: "barna", kor: 20, tesok: 3, nev: "GergőT", mondat: "Kedd a legjóbb nap." },
+        { szemszin: "barna", kor: 20, tesok: 2, nev: "Sanyi", mondat: "Tegnap sikerült időben megoldani a java feladatot."},
+        { szemszin: "zöld", kor: 20, tesok: 2, nev: "Márton", mondat: "Nem volt angol hétfőn" },
+        { szemszin: "barna", kor: 20, tesok: 2, nev: "Dominik", mondat: "Kedd, mert a szölőben a kistraktorral tevékenykedtem."},
+        { szemszin: "barna", kor: 21, tesok: 2, nev: "Marci", mondat: "Ha gyenge vagy akkor legalább ne sírj" },
+        { szemszin: "kék", kor: 20, tesok: 4, nev: "Bence", mondat: "Pillanat türelmet kérek javítom a mikrofont." }];
+  
+  megjelTab(list);
 }
 
-function megjelenit(list){
-    for ( let i = 0; i < list.length; i++){
-        const div = document.createElement('div');
-        const cim = document.createElement('cim');
-        const szov = document.createElement('szov');
-        document.body.appendChild(div);
-        document.body.appendChild(cim);
-        document.body.appendChild(szov);
-        const text = document.createTextNode(list[i].nev);
-        szov.appendChild(document.createTextNode(list[i].mondat));
-        cim.appendChild(text);
+function megjelenitList(list) {
+    const MAIN = document.querySelector("main");
+    let htmlkod = "";
+    for (let i = 0; i < list.length; i++) {
+      htmlkod += `<div> <h2>${list[i].nev}</h2> <p>${list[i].mondat}</p> <div>`;
     }
+    MAIN.innerHTML += htmlkod;
+  }
+
+function megjelenit() {
+  const MAIN = document.querySelector("main");
+  let htmlkod = "";
+  for (let i = 0; i < list.length; i++) {
+    htmlkod += `<div> <h2>${list[i].nev}</h2> <p>${list[i].mondat}</p> <div>`;
+  }
+  MAIN.innerHTML += htmlkod;
 }
+
+function megjelTab(list) {
+    const art = document.querySelector("article");
+    const atlagkor = atlag(list);
+    let tab = `<table>
+    <tbody>`;
+    for (let i = 0; i < list.length; i++) {
+      tab += `<tr>
+      <td>${list[i].nev}</td>
+      <td>${list[i].mondat}</td>
+      <td>${list[i].kor}</td>
+        </tr>`;
+    }
+
+    tab += `<p>Az atlagos kor: ${atlagkor}</p>
+        </tbody>
+        </table>`
+
+    art.innerHTML += tab;
+}
+
+function atlag(list){
+    let ossz = 0
+    for (let i = 0; i < list.length; i++) {
+        element += list[i].kor
+    }
+    const eredmeny = ossz / i
+}
+
